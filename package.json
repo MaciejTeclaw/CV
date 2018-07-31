@@ -1,0 +1,22 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "CV Maciej Teclaw",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "jquery": "^3.3.1",
+    "save-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Maciej Teclaw",
+  "license": "ISC"
+}
