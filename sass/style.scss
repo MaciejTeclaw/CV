@@ -10,24 +10,42 @@
   justify-content: center;
   align-items: center;
   .map {
-    width: 85%;
-    height: 85%;
+    width: 1200px;
+    height: 600px;
     position: relative;
     background-color: greenyellow;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    .info{
+      width: 300px;
+      height: 200px;
+      border: 1px solid black;
+      background-color: wheat;
+      font-size: 20px;
+      z-index: 1;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
   }
 }
 
 .player {
-  background: url("../images/guy.jpg") center no-repeat;
+  background: url("../images/guy1.png") center no-repeat;
   background-size: cover;
+  margin: 0 auto;
   position: absolute;
-  width: 86px;
-  height: 92px;
+  width: 90px;
+  height: 120px;
+  //top: 250px;
+  //left: 555px;
   top: 50%;
   left: 50%;
   border: none;
-  //transform: translate(-50%, -50%);
 }
 
 .about {
