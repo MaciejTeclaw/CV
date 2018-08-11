@@ -15,8 +15,7 @@
     background-color: greenyellow;
     border: none;
     display: flex;
-    justify-content: center;
-    align-items: top; }
+    justify-content: center; }
     .container .map .info {
       width: 300px;
       height: 200px;
@@ -28,6 +27,10 @@
       display: flex;
       justify-content: center;
       align-items: center; }
+    .container .map .aboutEl {
+      width: 200px;
+      height: 500px;
+      border: 1px solid red; }
 
 .player {
   background: url("../images/guy1.png") center no-repeat;
@@ -38,9 +41,10 @@
   height: 120px;
   top: 50%;
   left: 50%;
-  border: none; }
+  border: none;
+  z-index: 1; }
 
-.about {
+.letter {
   width: 150px;
   height: 150px;
   border: 5px solid red;
@@ -48,7 +52,7 @@
   top: 0;
   position: absolute; }
 
-.letter {
+.about {
   width: 150px;
   height: 150px;
   border: 5px solid yellow;
