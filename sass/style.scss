@@ -78,7 +78,7 @@
       }
     }
 
-    .skillsAndHobby {
+    .exp {
       width: 150px;
       height: 150px;
       border: 5px solid blue;
@@ -87,7 +87,20 @@
       position: absolute;
       transform: translate(-100%, 0%);
     }
-    .exp {
+    .expEl {
+      width: 300px;
+      height: 400px;
+      background-color: wheat;
+      border: 2px solid black;
+      text-align: center;
+      h3 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    .skillsAndHobby {
       width: 150px;
       height: 150px;
       border: 5px solid black;
@@ -95,6 +108,19 @@
       top: 100%;
       position: absolute;
       transform: translate(0%, -100%);
+    }
+    .sahEl {
+      width: 300px;
+      height: 400px;
+      background-color: wheat;
+      border: 2px solid black;
+      text-align: center;
+      h3 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 18px;
+      }
     }
   }
 }
@@ -126,4 +152,22 @@
   border-bottom-left-radius: 225px 15px;
   border-bottom-right-radius: 15px 255px;
   box-shadow: 15px 28px 25px -18px rgba(0, 0, 0, .2);
+}
+.border-4{
+  border-top-left-radius: 15px 225px;
+  border-top-right-radius: 25px 150px;
+  border-bottom-left-radius: 25px 115px;
+  border-bottom-right-radius: 155px 25px
+}
+.border-5{
+  border-top-left-radius: 250px 15px;
+  border-top-right-radius: 25px 80px;
+  border-bottom-left-radius: 20px 115px;
+  border-bottom-right-radius: 15px 105px
+}
+.border-6 {
+  border-top-left-radius: 28px 125px;
+  border-top-right-radius: 100px 30px;
+  border-bottom-right-radius: 20px 205px;
+  border-bottom-left-radius: 15px 225px
 }
