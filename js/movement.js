@@ -4,6 +4,7 @@ $(function () {
 
         const map = $('.map');
         const info = $('.info');
+        const bubbly = $('.arrow_box');
 
 
         const player = $('.player');
@@ -83,66 +84,69 @@ $(function () {
                 if (playerPosLeft() <= 0) {
                     player.css('left', playerPosition.left + 20 + 'px')
                 }
-                console.log(expPosLeft(), expPosTop())
-                info.remove();
+                info.fadeOut(300, function(){ info.remove(); });
+                bubbly.fadeOut(300, function(){ bubbly.remove(); });
                 break;
             case 38:
                 player.css('top', playerPosition.top - 20 + 'px');
                 if (playerPosTop() <= 0) {
                     player.css('top', playerPosition.top + 20 + 'px')
                 }
-                info.remove();
+                info.fadeOut(300, function(){ info.remove(); });
+                bubbly.fadeOut(300, function(){ bubbly.remove(); });
                 break;
             case 39:
                 player.css('left', playerPosition.left + 20 + 'px');
                 if (playerPosLeft() >= map.width() - player.width()) {
                     player.css('left', playerPosition.left - 20 + 'px')
                 }
-                info.remove();
+                info.fadeOut(300, function(){ info.remove(); });
+                bubbly.fadeOut(300, function(){ bubbly.remove(); });
                 break;
             case 40:
                 player.css('top', playerPosition.top + 20 + 'px');
                 if (playerPosTop() >= map.height() - player.height()) {
                     player.css('top', playerPosition.top - 20 + 'px')
                 }
-                info.remove();
+                info.fadeOut(300, function(){ info.remove(); });
+                bubbly.fadeOut(300, function(){ bubbly.remove(); });
                 break;
         }
 
         if (playerPosLeft() >= aboutPosLeft() &&
             playerPosTop() >= aboutPosTop()) {
             if (addAbout.length === 0) {
-                map.append(aboutEl)
+                $(aboutEl).hide().appendTo(map).slideToggle();
             }
         } else {
-            addAbout.remove()
+            addAbout.slideToggle(500, function(){ $(this).remove();});
         }
 
         if (playerPosLeft() <= letterPosLeft() + (letter.width() - player.width()) &&
             playerPosTop() <= letterPosTop() + (letter.height() - player.height())){
             if (addLetter.length === 0){
-                map.append(letterEl)
+                $(letterEl).hide().appendTo(map).slideToggle();
             }
         }else {
-            addLetter.remove()
+            addLetter.slideToggle(500, function(){ $(this).remove();});
         }
 
         if (playerPosLeft() <= sahPosLeft() + (sah.width() - player.width()) &&
             playerPosTop() >= sahPosTop()){
             if(addSah.length === 0){
-                map.append(sahEl)
+                $(sahEl).hide().appendTo(map).slideToggle();
             }
         }else{
-            addSah.remove()
+            addSah.slideToggle(500, function(){ $(this).remove();});
         }
 
         if (playerPosLeft() >= expPosLeft() &&
             playerPosTop() <= expPosTop() + (exp.height() - player.width())){
             if (addExp.length === 0){
-                map.append(expEl)
+                $(expEl).hide().appendTo(map).slideToggle();
             }
         }else{
-            addExp.remove()
+            addExp.slideToggle(500, function(){ $(this).remove();});
         }
     });
 });
