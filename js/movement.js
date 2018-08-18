@@ -1,5 +1,10 @@
 $(function () {
 
+    $('.menu').hide();
+    $('.hamburger').on('click', function() {
+        $('.menu').slideToggle();
+    });
+
     $(document).keydown(function (movement) {
 
         const map = $('.map');

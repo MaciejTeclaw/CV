@@ -16,9 +16,27 @@
   width: 100vw;
   height: 100vh;
   background-color: green;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  .hamburger {
+    width: 64px;
+    height: 64px;
+    background-image: url("../images/menu.png");
+    position: absolute;
+    left: 0;
+    top: 0;
+    .menu {
+      height: 100vh;
+      position: absolute;
+      li{
+        margin-top: 64px;
+        height: 64px;
+        width: 64px;
+      }
+    }
+  }
   .map {
     width: 1200px;
     height: 600px;
