@@ -39,7 +39,7 @@ $(function () {
             '<p>Adres: ul. Jasna Rola 36F/23 <br> 61-609 Poznań</p>' +
             '<p>Telefon: 669258394</p>' +
             '<p>Email: maciejteclaw1990@gmail.com</p>' +
-            '<p>Linki: <br> GitHub: https://github.com/MaciejTeclaw <br>LinkedIn: www.linkedin.com/in/maciej-tecław-388091167/</p>' +
+            '<p>Linki: <br> GitHub: https://github.com/MaciejTeclaw <br>LinkedIn: www.linkedin.com/in/maciej-teclaw-388091167/</p>' +
             '</div>';
         const addAbout = $('.aboutEl');
 
@@ -92,6 +92,15 @@ $(function () {
             '<p>08.2018 - chwila obecna - PolPol.pl <br> Stażysta - HTML, CSS, JavaScript (JQuery)</p>' +
             '</div>';
         const addExp = $('.expEl');
+
+        /* CV */
+
+        const doc = new jsPDF();
+        const specialElementHandlers = {
+            '#editor': function (element, renderer) {
+                return true;
+            }
+        };
 
 
         switch (movement.keyCode) {
@@ -188,5 +197,13 @@ $(function () {
                 $(this).remove();
             });
         }
+
+        $('.gen').click(function () {
+            doc.fromHTML($(' /* wymyślić jak stworzyć pdfa z zmiennych */').html(), 15, 15, {
+                'width': 170,
+                'elementHandlers': specialElementHandlers
+            });
+            doc.save('cvMaciejTeclaw.pdf');
+        });
     });
 });
