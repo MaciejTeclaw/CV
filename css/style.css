@@ -7,6 +7,11 @@
   * p {
     font-size: 18px; }
 
+.cvFile {
+  height: 100%;
+  width: 600px;
+  background-color: white; }
+
 .cvGen {
   position: absolute;
   top: 1%;
@@ -109,7 +114,8 @@
       height: 400px;
       background-color: wheat;
       border: 2px solid black;
-      text-align: center; }
+      text-align: center;
+      padding: 5px; }
     .container .map .about {
       width: 150px;
       height: 150px;

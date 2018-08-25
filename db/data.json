@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "name": "Maciej Tecław",
+      "birthdate": "08.03.1990",
+      "phone": "669258394",
+      "mail": "maciejteclaw1990@gmail.com",
+      "links": [
+        "GitHub: https://github.com/MaciejTeclaw",
+        "LinkedIn: www.linkedin.com/in/maciej-teclaw-388091167/"
+      ],
+      "exp": [
+        "08.2018 - chwila obecna - PolPol.pl - Stażysta - HTML, CSS, JavaScript (JQuery)",
+        "10.2016 - 04.2018 - OLX Group - Specjalista Do Spraw Obsługi Użytkownika",
+        "01.2012 - 03.2017 - Pizza Express - Kierowca, Dyspozytor-Kierownik Zmiany"
+      ],
+      "skills": [
+        "HTML,CSS, JavaScript (JQuery, React), Git, Gulp, Webpack",
+        "Język Angielski - średniozaawansowany",
+        "Język niemiecki - podstawowy"
+      ],
+      "hobby": [
+        "Muzyka rockowa oraz elektroniczna",
+        "Tresura psów ",
+        "Piłka nożna (głównie Ekstraklasa oraz Lech Poznań)",
+        "Jazda rowerem"
+      ],
+      "letter": "Moje wcześniejsze doświadczenie zawodowe opiera się głównie na kontakcie z Klientem. Doszedłem jednak do wniosku, że zmiana branży umożliwi mi podjęcie pracy zgodnej z moimi zainteresowaniami, stworzy większe możliwości samorozwoju, a także pozwoli mi podjąć pracę, która się nie nudzi. Postawiłem na programowanie. Od tamtego momentu ukończyłem stacjonarny kurs JavaScript'u oraz spędzam coraz więcej wolnego na kodowaniu oraz doszkalaniu się w tej dziedzinie."
+    }
+  ]
+}

@@ -12,6 +12,12 @@
   }
 }
 
+.cvFile{
+  height: 100%;
+  width: 600px;
+  background-color: white;
+}
+
 .cvGen{
   position: absolute;
   top: 1%;
@@ -126,6 +132,7 @@
       background-color: wheat;
       border: 2px solid black;
       text-align: center;
+      padding: 5px;
     }
     .about {
       width: 150px;
