@@ -1,8 +1,33 @@
-// import data from './db/db.js';
-
 $(function () {
 
     $(document).keydown(function (movement) {
+
+        // delete elements on move //
+        function removeEl(firstEl, secondEl, time) {
+            firstEl.fadeOut(time, function () {
+                firstEl.remove();
+            });
+            secondEl.fadeOut(time, function () {
+                secondEl.remove();
+            });
+        }
+
+        // hide and add elements //
+        function hideAndAdd(el, hideEl) {
+            if (el.length === 0) {
+                $(hideEl).hide().appendTo(map).slideToggle();
+            }
+        }
+
+        // hide and remove elements //
+
+        function hideAndRemove(addedEl) {
+            addedEl.slideToggle(500, function () {
+                addedEl.remove();
+            })
+        }
+
+            /* GENERAL */
 
             const map = $('.map');
             const info = $('.info');
@@ -97,113 +122,59 @@ $(function () {
                     if (playerPosLeft() <= 0) {
                         player.css('left', playerPosition.left + 20 + 'px')
                     }
-                    info.fadeOut(300, function () {
-                        info.remove();
-                    });
-                    bubbly.fadeOut(300, function () {
-                        bubbly.remove();
-                    });
+                    removeEl(info, bubbly, 300);
                     break;
                 case 38:
                     player.css('top', playerPosition.top - 20 + 'px');
                     if (playerPosTop() <= 0) {
                         player.css('top', playerPosition.top + 20 + 'px')
                     }
-                    info.fadeOut(300, function () {
-                        info.remove();
-                    });
-                    bubbly.fadeOut(300, function () {
-                        bubbly.remove();
-                    });
+                    removeEl(info, bubbly, 300);
                     break;
                 case 39:
                     player.css('left', playerPosition.left + 20 + 'px');
                     if (playerPosLeft() >= map.width() - player.width()) {
                         player.css('left', playerPosition.left - 20 + 'px')
                     }
-                    info.fadeOut(300, function () {
-                        info.remove();
-                    });
-                    bubbly.fadeOut(300, function () {
-                        bubbly.remove();
-                    });
+                    removeEl(info, bubbly, 300);
                     break;
                 case 40:
                     player.css('top', playerPosition.top + 20 + 'px');
                     if (playerPosTop() >= map.height() - player.height()) {
                         player.css('top', playerPosition.top - 20 + 'px')
                     }
-                    info.fadeOut(300, function () {
-                        info.remove();
-                    });
-                    bubbly.fadeOut(300, function () {
-                        bubbly.remove();
-                    });
+                    removeEl(info, bubbly, 300);
                     break;
             }
 
             if (playerPosLeft() >= aboutPosLeft() &&
                 playerPosTop() >= aboutPosTop()) {
-                if (addAbout.length === 0) {
-                    $(aboutEl).hide().appendTo(map).slideToggle();
-                }
+                hideAndAdd(addAbout, aboutEl)
             } else {
-                addAbout.slideToggle(500, function () {
-                    $(this).remove();
-                });
+                hideAndRemove(addAbout)
             }
 
             if (playerPosLeft() <= letterPosLeft() + (letter.width() - player.width()) &&
                 playerPosTop() <= letterPosTop() + (letter.height() - player.height())) {
-                if (addLetter.length === 0) {
-                    $(letterEl).hide().appendTo(map).slideToggle();
-                }
+                hideAndAdd(addLetter, letterEl)
             } else {
-                addLetter.slideToggle(500, function () {
-                    $(this).remove();
-                });
+                hideAndRemove(addLetter)
             }
-
-            // function addData() {
-            //     if (playerPosLeft() <= letterPosLeft() + (letter.width() - player.width()) &&
-            //         playerPosTop() <= letterPosTop() + (letter.height() - player.height())) {
-            //         $.getJSON("./db/data.json", function (data) {
-            //             const dupa = "";
-            //             $.each(data, function (letter) {
-            //                 dupa.push("<div class='\"letterEl border-6\"'>" + letter + "</div>")
-            //             });
-            //
-            //             $(dupa).appendTo(map)
-            //         })
-            //
-            //     } else {
-            //         addLetter.slideToggle(500, function () {
-            //             $(this).remove();
-            //         });
-            //     }
-            // }
 
             if (playerPosLeft() <= sahPosLeft() + (sah.width() - player.width()) &&
                 playerPosTop() >= sahPosTop()) {
-                if (addSah.length === 0) {
-                    $(sahEl).hide().appendTo(map).slideToggle();
-                }
+                hideAndAdd(addSah, sahEl)
             } else {
-                addSah.slideToggle(500, function () {
-                    $(this).remove();
-                });
+                hideAndRemove(addSah)
             }
 
             if (playerPosLeft() >= expPosLeft() &&
                 playerPosTop() <= expPosTop() + (exp.height() - player.width())) {
-                if (addExp.length === 0) {
-                    $(expEl).hide().appendTo(map).slideToggle();
-                }
+                hideAndAdd(addExp, expEl)
             } else {
-                addExp.slideToggle(500, function () {
-                    $(this).remove();
-                });
+                hideAndRemove(addExp)
             }
         }
+
     );
 });
