@@ -2,36 +2,37 @@ $(function () {
 
     $(document).keydown(function (movement) {
 
-        // delete elements on move //
-        function removeEl(firstEl, secondEl, time) {
-            firstEl.fadeOut(time, function () {
-                firstEl.remove();
-            });
-            secondEl.fadeOut(time, function () {
-                secondEl.remove();
-            });
-        }
-
-        // hide and add elements //
-        function hideAndAdd(el, hideEl) {
-            if (el.length === 0) {
-                $(hideEl).hide().appendTo(map).slideToggle();
-            }
-        }
-
-        // hide and remove elements //
-
-        function hideAndRemove(addedEl) {
-            addedEl.slideToggle(500, function () {
-                addedEl.remove();
-            })
-        }
-
             /* GENERAL */
 
             const map = $('.map');
             const info = $('.info');
             const bubbly = $('.arrow_box');
+
+
+            // delete elements on move //
+            function removeEl(firstEl, secondEl, time) {
+                firstEl.fadeOut(time, function () {
+                    firstEl.remove();
+                });
+                secondEl.fadeOut(time, function () {
+                    secondEl.remove();
+                });
+            }
+
+            // hide and add elements //
+            function hideAndAdd(el, hideEl) {
+                if (el.length === 0) {
+                    $(hideEl).hide().appendTo(map).slideToggle();
+                }
+            }
+
+            // hide and remove elements //
+
+            function hideAndRemove(addedEl) {
+                addedEl.slideToggle(500, function () {
+                    addedEl.remove();
+                })
+            }
 
             /* PLAYER */
 
@@ -111,41 +112,44 @@ $(function () {
                 '<h3> Doświadczenie:</h3>' +
                 '<p>01.2012 - 03.2017 - Pizza Express <br> Kierowca, Dyspozytor-Kierownik Zmiany</p>' +
                 '<p>10.2016 - 04.2018 - OLX Group <br> Specjalista Do Spraw Obsługi Użytkownika</p>' +
-                '<p>08.2018 - chwila obecna - PolPol.pl <br> Stażysta - HTML, CSS, JavaScript (JQuery)</p>' +
+                '<p>08.2018 - Obecnie - PolPol.pl <br> Stażysta - HTML, CSS, JavaScript (JQuery)</p>' +
                 '</div>';
             const addExp = $('.expEl');
 
+            // movement on arrows //
 
-            switch (movement.keyCode) {
-                case 37:
-                    player.css('left', playerPosition.left - 20 + 'px');
-                    if (playerPosLeft() <= 0) {
-                        player.css('left', playerPosition.left + 20 + 'px')
-                    }
-                    removeEl(info, bubbly, 300);
-                    break;
-                case 38:
-                    player.css('top', playerPosition.top - 20 + 'px');
-                    if (playerPosTop() <= 0) {
-                        player.css('top', playerPosition.top + 20 + 'px')
-                    }
-                    removeEl(info, bubbly, 300);
-                    break;
-                case 39:
-                    player.css('left', playerPosition.left + 20 + 'px');
-                    if (playerPosLeft() >= map.width() - player.width()) {
-                        player.css('left', playerPosition.left - 20 + 'px')
-                    }
-                    removeEl(info, bubbly, 300);
-                    break;
-                case 40:
-                    player.css('top', playerPosition.top + 20 + 'px');
-                    if (playerPosTop() >= map.height() - player.height()) {
-                        player.css('top', playerPosition.top - 20 + 'px')
-                    }
-                    removeEl(info, bubbly, 300);
-                    break;
-            }
+        switch (movement.keyCode) {
+            case 37:
+                player.css('left', playerPosition.left - 20 + 'px');
+                if (playerPosLeft() <= 0) {
+                    player.css('left', playerPosition.left + 20 + 'px')
+                }
+                removeEl(info, bubbly, 300);
+                break;
+            case 38:
+                player.css('top', playerPosition.top - 20 + 'px');
+                if (playerPosTop() <= 0) {
+                    player.css('top', playerPosition.top + 20 + 'px')
+                }
+                removeEl(info, bubbly, 300);
+                break;
+            case 39:
+                player.css('left', playerPosition.left + 20 + 'px');
+                if (playerPosLeft() >= map.width() - player.width()) {
+                    player.css('left', playerPosition.left - 20 + 'px')
+                }
+                removeEl(info, bubbly, 300);
+                break;
+            case 40:
+                player.css('top', playerPosition.top + 20 + 'px');
+                if (playerPosTop() >= map.height() - player.height()) {
+                    player.css('top', playerPosition.top - 20 + 'px')
+                }
+                removeEl(info, bubbly, 300);
+                break;
+        }
+
+        // show and remove about me element //
 
             if (playerPosLeft() >= aboutPosLeft() &&
                 playerPosTop() >= aboutPosTop()) {
@@ -154,12 +158,16 @@ $(function () {
                 hideAndRemove(addAbout)
             }
 
+        // show and remove cover letter element //
+
             if (playerPosLeft() <= letterPosLeft() + (letter.width() - player.width()) &&
                 playerPosTop() <= letterPosTop() + (letter.height() - player.height())) {
                 hideAndAdd(addLetter, letterEl)
             } else {
                 hideAndRemove(addLetter)
             }
+
+        // show and remove skills and hobby element //
 
             if (playerPosLeft() <= sahPosLeft() + (sah.width() - player.width()) &&
                 playerPosTop() >= sahPosTop()) {
@@ -168,6 +176,8 @@ $(function () {
                 hideAndRemove(addSah)
             }
 
+        // show and remove experience element //
+
             if (playerPosLeft() >= expPosLeft() &&
                 playerPosTop() <= expPosTop() + (exp.height() - player.width())) {
                 hideAndAdd(addExp, expEl)
@@ -175,6 +185,5 @@ $(function () {
                 hideAndRemove(addExp)
             }
         }
-
     );
 });

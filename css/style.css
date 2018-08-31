@@ -16,19 +16,23 @@
   position: absolute;
   top: 1%;
   left: 1%;
-  font-size: 18px;
   border: 2px solid black;
-  background-color: white;
-  color: black; }
+  background-color: white; }
+  .cvGen a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px; }
 
 .cvGenHover {
   position: absolute;
   top: 1%;
   left: 1%;
-  font-size: 18px;
   border: 2px solid white;
-  background-color: black;
-  color: white; }
+  background-color: black; }
+  .cvGenHover a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px; }
 
 .container {
   width: 1440px;
