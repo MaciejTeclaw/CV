@@ -7,12 +7,8 @@
   * p {
     font-size: 18px; }
 
-.cvFile {
-  height: 100%;
-  width: 600px;
-  background-color: white; }
-
 .cvGen {
+  z-index: 1;
   position: absolute;
   top: 1%;
   left: 1%;
@@ -42,6 +38,10 @@
   display: flex;
   justify-content: center;
   align-items: center; }
+  .container .shark {
+    position: absolute;
+    top: 1%;
+    left: 1%; }
   .container .map {
     width: 1200px;
     height: 600px;

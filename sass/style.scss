@@ -12,13 +12,8 @@
   }
 }
 
-.cvFile{
-  height: 100%;
-  width: 600px;
-  background-color: white;
-}
-
 .cvGen{
+  z-index: 1;
   position: absolute;
   top: 1%;
   left: 1%;
@@ -51,6 +46,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .shark {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+  }
 
   .map {
     width: 1200px;

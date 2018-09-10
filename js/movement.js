@@ -116,40 +116,63 @@ $(function () {
                 '</div>';
             const addExp = $('.expEl');
 
+
+            // shark movement //
+        const shark = $('.shark');
+
+            function sharkAnimation() {
+
+                shark.animate({
+                    left: "+1350px",
+                }, 2000);
+                shark.animate({
+                    top: "+640px",
+                }, 1000);
+                shark.animate({
+                    left: "+50px",
+                }, 2000);
+                shark.animate({
+                    top: "+10px",
+                }, 1000);
+
+            }
+
+            sharkAnimation();
+
             // movement on arrows //
 
-        switch (movement.keyCode) {
-            case 37:
-                player.css('left', playerPosition.left - 20 + 'px');
-                if (playerPosLeft() <= 0) {
-                    player.css('left', playerPosition.left + 20 + 'px')
-                }
-                removeEl(info, bubbly, 300);
-                break;
-            case 38:
-                player.css('top', playerPosition.top - 20 + 'px');
-                if (playerPosTop() <= 0) {
-                    player.css('top', playerPosition.top + 20 + 'px')
-                }
-                removeEl(info, bubbly, 300);
-                break;
-            case 39:
-                player.css('left', playerPosition.left + 20 + 'px');
-                if (playerPosLeft() >= map.width() - player.width()) {
-                    player.css('left', playerPosition.left - 20 + 'px')
-                }
-                removeEl(info, bubbly, 300);
-                break;
-            case 40:
-                player.css('top', playerPosition.top + 20 + 'px');
-                if (playerPosTop() >= map.height() - player.height()) {
-                    player.css('top', playerPosition.top - 20 + 'px')
-                }
-                removeEl(info, bubbly, 300);
-                break;
-        }
+            switch (movement.keyCode) {
+                case 37:
+                    player.css('left', playerPosition.left - 20 + 'px');
+                    if (playerPosLeft() <= 0) {
+                        player.css('left', playerPosition.left + 20 + 'px')
+                    }
+                    removeEl(info, bubbly, 300);
+                    break;
+                case 38:
+                    player.css('top', playerPosition.top - 20 + 'px');
+                    if (playerPosTop() <= 0) {
+                        player.css('top', playerPosition.top + 20 + 'px')
+                    }
+                    removeEl(info, bubbly, 300);
+                    break;
+                case 39:
+                    player.css('left', playerPosition.left + 20 + 'px');
+                    if (playerPosLeft() >= map.width() - player.width()) {
+                        player.css('left', playerPosition.left - 20 + 'px')
+                    }
+                    removeEl(info, bubbly, 300);
+                    break;
+                case 40:
+                    player.css('top', playerPosition.top + 20 + 'px');
+                    if (playerPosTop() >= map.height() - player.height()) {
+                        player.css('top', playerPosition.top - 20 + 'px')
+                    }
+                    removeEl(info, bubbly, 300);
+                    break;
+            }
 
-        // show and remove about me element //
+            // show and remove about me element //
 
             if (playerPosLeft() >= aboutPosLeft() &&
                 playerPosTop() >= aboutPosTop()) {
@@ -158,7 +181,7 @@ $(function () {
                 hideAndRemove(addAbout)
             }
 
-        // show and remove cover letter element //
+            // show and remove cover letter element //
 
             if (playerPosLeft() <= letterPosLeft() + (letter.width() - player.width()) &&
                 playerPosTop() <= letterPosTop() + (letter.height() - player.height())) {
@@ -167,7 +190,7 @@ $(function () {
                 hideAndRemove(addLetter)
             }
 
-        // show and remove skills and hobby element //
+            // show and remove skills and hobby element //
 
             if (playerPosLeft() <= sahPosLeft() + (sah.width() - player.width()) &&
                 playerPosTop() >= sahPosTop()) {
@@ -176,7 +199,7 @@ $(function () {
                 hideAndRemove(addSah)
             }
 
-        // show and remove experience element //
+            // show and remove experience element //
 
             if (playerPosLeft() >= expPosLeft() &&
                 playerPosTop() <= expPosTop() + (exp.height() - player.width())) {
