@@ -6,23 +6,20 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-
     <script src="./dist/out.js"></script>
-    <script src="./js/cv.js"></script>
     <link rel="stylesheet" href="./css/style.css">
-
-
 </head>
+
 <body>
-<div class="container">
-    <button class="gen cvGen border-2"> <a href="MaciejTeclawCV.pdf"> Ściągnij CV</a></button>
-    <img class="shark" src="images/shark-fin.png">
+<section class="container">
+    <button class="gen cvGen border-2"><a href="MaciejTeclawCV.pdf"> Ściągnij CV</a></button>
+    <div id="shark"></div>
     <div class="map">
         <div class="arrow_box">
-            <p>Witaj w moim CV!</p>
+            <p>Witaj w moim <strong>CV!</strong></p>
         </div>
         <div class="info">
-            <div class="littleBoxParent up">
+            <div class="littleBoxParent">
                 <div class="up border-3 littleBox">GÓRA</div>
             </div>
             <div class="littleBoxParent">
@@ -31,16 +28,20 @@
                 <div class="border-6 littleBox">PRAWO</div>
             </div>
         </div>
-        <div class="player"></div>
-        <div class="about"></div>
-        <div class="letter"></div>
-        <div class="exp"></div>
-        <div class="skillsAndHobby"></div>
+        <div class="playerFront"></div>
+        <div class="about">
+            <img src="images/hut.png">
+        </div>
+        <div class="letter">
+            <img src="images/palm-tree.png">
+        </div>
+        <div class="exp">
+            <img src="images/raft.png">
+        </div>
+        <div class="skillsAndHobby">
+            <img src="images/log.png">
+        </div>
     </div>
-
-</div>
-
-
+</section>
 </body>
-
 </html>
